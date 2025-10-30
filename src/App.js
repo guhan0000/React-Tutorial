@@ -28,6 +28,7 @@ import Form from "./pages/Form";
 import Demo from "./pages/Demo";
 import PageNotFound from "./pages/PageNotFound";
 import BmiCalculator from "./useState/BmiCalculator";
+import BmiCalculatorDemo from "./useState/BmiCalculatorDemo";
 function App() {
   return (
     // <h1>Hello Guhan</h1>
@@ -67,6 +68,7 @@ function App() {
         </Routes> */}
       {/* </BrowserRouter> */}
       <BmiCalculator/>
+      <BmiCalculatorDemo/>
     </>
   );
 }
