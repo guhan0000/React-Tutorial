@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-
+import styles from "./BMI.module.css";
 const BmiCalculator = () => {
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
   const [bmi, setBmi] = useState("");
   const [error, setError] = useState("");
   const [bmiStatus, setBmiStatus] = useState("");
+  const [statusColor, setStatusColor] = useState("");
   function handleChange(event) {
     setHeight(event.target.value);
   }
@@ -17,12 +18,16 @@ const BmiCalculator = () => {
       setBmi(result);
       if (result < 18.5) {
         setBmiStatus("UnderWeight");
+        setStatusColor("under-weight");
       } else if (result >= 18.5 && result <= 25) {
         setBmiStatus("Normal Weight");
+        setStatusColor("normal");
       } else if (result > 25 && result <= 30) {
         setBmiStatus("OverWeight");
+        setStatusColor("over-weight");
       } else {
         setBmiStatus("Obese");
+        setStatusColor("obese");
       }
       setError("");
       setHeight("");
@@ -55,11 +60,15 @@ const BmiCalculator = () => {
       />
       <button onClick={calculateBMI}>Calculate</button>
       {bmi && (
-        <p>
-          BMI is {bmi} and Your status is {bmiStatus}
-        </p>
+        <>
+          <p>BMI is {bmi}.</p>
+          <p>
+            Your status is{" "}
+            <span className={styles[statusColor]}>{bmiStatus}</span>
+          </p>
+        </>
       )}
-      {error && <p style={{color:"red"}}>{error}</p>}
+      {error && <p>{error}</p>}
       {/* {setBmi("")} */}
     </div>
   );

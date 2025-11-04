@@ -1,0 +1,12 @@
+.normal {
+  color: green;
+}
+.under-weight {
+  color: rgb(230, 60, 60);
+}
+.over-weight {
+  color: orange;
+}
+.obese {
+  color: red;
+}
