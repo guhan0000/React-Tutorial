@@ -11,10 +11,8 @@ import bajaj from "./assets/bajaj.avif";
 function App() {
   return (
     <>
-      <Bike brand={"TVS"} model={"Raider"} price={"$300"} image={tvs} />
-      <Bike brand={"Yamaha"} model={"MT-15"} price={"$500"} image={yamaha} />
-      <Bike brand={"Honda"} model={"SP-125"} price={"$350"} image={honda} />
-      <Bike brand={"Bajaj"} model={"NS-200"} price={"$450"} image={bajaj} />
+      <h1>Dynamic Loading</h1>
+      <BikeList />
     </>
   );
 }
