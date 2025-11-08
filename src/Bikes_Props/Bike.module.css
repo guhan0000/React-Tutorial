@@ -1,0 +1,21 @@
+.card {
+  border: 2px solid red;
+  width: 400px;
+  padding: 20px;
+  margin: 20px;
+  display: inline-block;
+  /* display: flex; */
+  /* flex-direction: column; */
+  text-align: center;
+  border-radius: 20px;
+}
+.bikeImg {
+  width: 350px;
+}
+.btn {
+  background-color: green;
+  color: whitesmoke;
+  padding: 5px;
+  width: 100px;
+  border-radius: 20px;
+}
