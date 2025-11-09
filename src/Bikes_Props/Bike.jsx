@@ -4,7 +4,7 @@ import styles from "./Bike.module.css";
 
 const Bike = ({ brand, model, price, image, show }) => {
   function buyBike(bike) {
-    console.log("congrats", bike, "is purchased");
+    console.log("congrats", bike, "-", model, "is purchased");
   }
   // if (show) {
   return (
