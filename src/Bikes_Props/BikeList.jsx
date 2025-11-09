@@ -49,7 +49,9 @@ function BikeList() {
     .slice()
     .sort((bike1, bike2) => bike2.ex_cost - bike1.ex_cost);
   // filters bikes which are lesser than 2Lakhs
-  const bikeFilter = bikeList.filter((bike) => bike.ex_cost < 200000);
+  const bikeFilter = bikeList
+    .filter((bike) => bike.ex_cost < 200000)
+    .sort((bike1, bike2) => bike2.ex_cost - bike1.ex_cost);
   const myBikeList = bikeFilter.map((bike) => (
     <Bike
       brand={bike.brand}
