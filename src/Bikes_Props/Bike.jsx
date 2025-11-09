@@ -3,6 +3,9 @@ import React from "react";
 import styles from "./Bike.module.css";
 
 const Bike = ({ brand, model, price, image, show }) => {
+  function buyBike(bike) {
+    console.log("congrats", bike, "is purchased");
+  }
   // if (show) {
   return (
     show && (
@@ -12,7 +15,15 @@ const Bike = ({ brand, model, price, image, show }) => {
           <h4>{brand}</h4> <span>{model}</span>
           <h5>{price}</h5>
         </div>
-        <button className={styles.btn}>Buy</button>
+        <button
+          className={styles.btn}
+          onClick={(event) => {
+            buyBike(event.target.value);
+          }}
+          value={brand}
+        >
+          Buy
+        </button>
       </div>
     )
   );

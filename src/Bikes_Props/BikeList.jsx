@@ -52,7 +52,7 @@ function BikeList() {
   const bikeFilter = bikeList
     .filter((bike) => bike.ex_cost < 200000)
     .sort((bike1, bike2) => bike2.ex_cost - bike1.ex_cost);
-  const myBikeList = bikeFilter.map((bike) => (
+  const myBikeList = bikeList.map((bike) => (
     <Bike
       brand={bike.brand}
       model={bike.model}
