@@ -1,11 +1,14 @@
 // Car.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Car.module.css";
 
 const Car = ({ brand, model, price, image, show, id, fundelete }) => {
   function buyCar(car) {
     console.log("congrats", car, "-", model, "is purchased");
   }
+  // useEffect(() => {
+  //   console.log("useEffect inside Car");
+  // });
 
   return (
     show && (
@@ -24,7 +27,12 @@ const Car = ({ brand, model, price, image, show, id, fundelete }) => {
         >
           Buy
         </button>
-        <button className={styles.btn} onClick={()=>{fundelete(id)}}>
+        <button
+          className={styles.btn}
+          onClick={() => {
+            fundelete(id);
+          }}
+        >
           Delete
         </button>
       </div>

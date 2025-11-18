@@ -4,7 +4,7 @@ import swift from "../assets/swift.png";
 import i20 from "../assets/i20.png";
 import nexon from "../assets/nexon.png";
 import city from "../assets/city.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function CarList() {
   const [carList, setCarList] = useState([
@@ -45,6 +45,9 @@ function CarList() {
       show: true,
     },
   ]);
+  // useEffect(() => {
+  //   console.log("useEffect inside CarList");
+  // });
   function handleDelete(carId) {
     console.log("delete triggered");
 
