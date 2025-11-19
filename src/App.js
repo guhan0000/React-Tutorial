@@ -1,12 +1,12 @@
 // import logo from './logo.svg';
 import "./App.css";
 import React from "react";
-import DataFetch from "./api_fetch/DataFetch";
+import BikeList from "./localhost_api/BikeList";
 
 function App() {
   return (
     <>
-      <DataFetch />
+     <BikeList/>
     </>
   );
 }

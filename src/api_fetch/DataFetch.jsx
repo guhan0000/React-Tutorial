@@ -1,4 +1,4 @@
-import { useState, useEffect, React } from "react";
+import { useState, React } from "react";
 
 const DataFetch = () => {
   const [carts, setCarts] = useState([]);

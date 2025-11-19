@@ -5,7 +5,7 @@
       "model": "Raider",
       "price": "₹1,15,000",
       "ex_cost": 115000,
-      "image": "/assets/tvs.avif",
+      "image": "http://localhost:3001/assets/tvs.avif",
       "show": true
     },
     {
@@ -13,7 +13,7 @@
       "model": "MT-15",
       "price": "₹2,15,000",
       "ex_cost": 215000,
-      "image": "/assets/yamaha.avif",
+      "image": "http://localhost:3001/assets/yamaha.avif",
       "show": true
     },
     {
@@ -21,7 +21,7 @@
       "model": "NS-200",
       "price": "₹1,55,000",
       "ex_cost": 155000,
-      "image": "/assets/bajaj.avif",
+      "image": "http://localhost:3001/assets/bajaj.avif",
       "show": true
     },
     {
@@ -29,7 +29,7 @@
       "model": "SP-125",
       "price": "₹1,00,000",
       "ex_cost": 100000,
-      "image": "/assets/honda.avif",
+      "image": "http://localhost:3001/assets/honda.avif",
       "show": true
     }
   ]

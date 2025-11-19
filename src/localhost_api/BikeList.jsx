@@ -1,24 +1,32 @@
 import Bike from "./Bike";
-import tvs from "../assets/tvs.avif";
 
-import yamaha from "../assets/yamaha.avif";
-import bajaj from "../assets/bajaj.avif";
-import honda from "../assets/honda.avif";
+import { useEffect, useState } from "react";
 
 function BikeList() {
-  //sorts in ascending order
-  const sortedBikesAsc = [...bikeList].sort(
-    (bike1, bike2) => bike1.ex_cost - bike2.ex_cost
-  );
-  // sorts in descending order
-  const sortedBikesDesc = bikeList
-    .slice()
-    .sort((bike1, bike2) => bike2.ex_cost - bike1.ex_cost);
-  // filters bikes which are lesser than 2Lakhs
-  const bikeFilter = bikeList
-    .filter((bike) => bike.ex_cost < 200000)
-    .sort((bike1, bike2) => bike2.ex_cost - bike1.ex_cost);
-  const myBikeList = bikeList.map((bike) => (
+  const [bikes, setBikes] = useState(null);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    fetch("http://localhost:3001/bkes")
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Can't Retrieve Data");
+        }
+        return response.json();
+      })
+      .then((data) => setBikes(data))
+      .catch((error) => {
+        console.log(error.message);
+        setError(error.message);
+      });
+  }, []);
+  if (!bikes) {
+    return (
+      <>
+        <p>{error}</p>
+      </>
+    );
+  }
+  const myBikeList = bikes.map((bike) => (
     <Bike
       brand={bike.brand}
       model={bike.model}
