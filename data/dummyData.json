@@ -1,0 +1,36 @@
+{
+  "bikes": [
+    {
+      "brand": "TVS",
+      "model": "Raider",
+      "price": "₹1,15,000",
+      "ex_cost": 115000,
+      "image": "/assets/tvs.avif",
+      "show": true
+    },
+    {
+      "brand": "Yamaha",
+      "model": "MT-15",
+      "price": "₹2,15,000",
+      "ex_cost": 215000,
+      "image": "/assets/yamaha.avif",
+      "show": true
+    },
+    {
+      "brand": "Bajaj",
+      "model": "NS-200",
+      "price": "₹1,55,000",
+      "ex_cost": 155000,
+      "image": "/assets/bajaj.avif",
+      "show": true
+    },
+    {
+      "brand": "Honda",
+      "model": "SP-125",
+      "price": "₹1,00,000",
+      "ex_cost": 100000,
+      "image": "/assets/honda.avif",
+      "show": true
+    }
+  ]
+}
