@@ -26,7 +26,13 @@ function BikeList() {
     return (
       <>
         {error && <p>{error}</p>}
-        {!error && <img src={loading} width={"50px"} style={{margin:" 25% auto",display:"block"}}/>}
+        {!error && (
+          <img
+            src="project1/data/assets/loading.gif"
+            width={"50px"}
+            style={{ margin: " 25% auto", display: "block" }}
+          />
+        )}
       </>
     );
   }
