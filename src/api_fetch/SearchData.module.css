@@ -1,0 +1,9 @@
+.productList {
+  border: 2px solid greenyellow;
+  width: 300px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  display: inline;
+}

@@ -1,12 +1,13 @@
 // import logo from './logo.svg';
+import SearchData from "./api_fetch/SearchData";
 import "./App.css";
 import React from "react";
-import BikeList from "./localhost_api/BikeList";
+
 
 function App() {
   return (
     <>
-     <BikeList/>
+    <SearchData/>
     </>
   );
 }
