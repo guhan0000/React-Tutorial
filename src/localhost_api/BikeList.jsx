@@ -1,4 +1,5 @@
 import Bike from "./Bike";
+import loading from "../assets/loading.gif";
 
 import { useEffect, useState } from "react";
 
@@ -6,23 +7,26 @@ function BikeList() {
   const [bikes, setBikes] = useState(null);
   const [error, setError] = useState("");
   useEffect(() => {
-    fetch("http://localhost:3001/bkes")
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("Can't Retrieve Data");
-        }
-        return response.json();
-      })
-      .then((data) => setBikes(data))
-      .catch((error) => {
-        console.log(error.message);
-        setError(error.message);
-      });
+    setTimeout(() => {
+      fetch("http://localhost:3001/bikes")
+        .then((response) => {
+          if (!response.ok) {
+            throw Error("Can't Retrieve Data");
+          }
+          return response.json();
+        })
+        .then((data) => setBikes(data))
+        .catch((error) => {
+          console.log(error.message);
+          setError(error.message);
+        });
+    }, 2000);
   }, []);
   if (!bikes) {
     return (
       <>
-        <p>{error}</p>
+        {error && <p>{error}</p>}
+        {!error && <img src={loading} width={"50px"} style={{margin:" 25% auto",display:"block"}}/>}
       </>
     );
   }
