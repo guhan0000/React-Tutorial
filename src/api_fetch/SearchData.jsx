@@ -4,8 +4,13 @@ import styles from "./SearchData.module.css";
 const SearchData = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
+  const [input, setInput] = useState("");
+
   useEffect(() => {
     const getProduct = async () => {
+      // if (input === "") {
+      //   return;
+      // }
       let response = await fetch(
         `https://dummyjson.com/products/search?q=${search}`
       );
@@ -13,6 +18,7 @@ const SearchData = () => {
       console.log(data);
       setProducts(data.products);
     };
+
     getProduct();
   }, [search]);
 
@@ -23,21 +29,39 @@ const SearchData = () => {
       <input
         type="text"
         placeholder="Search Product"
-        value={search}
+        value={input}
         onChange={(event) => {
-          setSearch(event.target.value);
+          // setSearch(event.target.value);
+          setInput(event.target.value);
         }}
       />
-      {products.map((product, index) => {
-        return (
-          <div className={styles.container}>
+      <button
+        onClick={() => {
+          setSearch(input);
+        }}
+      >
+        search
+      </button>
+      <button
+        onClick={() => {
+          setInput("");
+          setSearch("");
+        }}
+      >
+        clear
+      </button>
+      <div className={styles.container}>
+        {products.map((product, index) => {
+          return (
             <div key={index} className={styles.productList}>
               <img src={product.thumbnail} alt={product.title} />
               <h4>{product.title}</h4>
+              <button>BuyNow</button>
+              <button>AddtoCart</button>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };
