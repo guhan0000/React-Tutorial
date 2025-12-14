@@ -1,0 +1,16 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.ip {
+  width: 500px;
+  padding: 10px;
+}
+.btn {
+  width: 200px;
+  padding: 10px;
+  background-color: orangered;
+  color: white;
+}
