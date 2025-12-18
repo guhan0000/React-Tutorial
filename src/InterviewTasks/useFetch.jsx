@@ -7,6 +7,7 @@ const useFetch = (url, load) => {
   useEffect(() => {
     if (!load) {
       setData([]);
+      setNotFound(false);
       return;
     }
     fetch(url)

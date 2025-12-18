@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import useFetch from "./useFetch";
 
 const CustomApiFetch = () => {
-  const [post, setPost] = useState("");
+  // const [post, setPost] = useState("");
   const [input, setInput] = useState("");
   const [load, setLoad] = useState(false);
   const [error, setError] = useState("");
@@ -10,7 +10,7 @@ const CustomApiFetch = () => {
   const [tasks, notFound] = useFetch(api, load);
 
   return (
-    <div>
+    <>
       <h1>Custom Api Fetch</h1>
       <input
         type="text"
@@ -30,9 +30,6 @@ const CustomApiFetch = () => {
             setInput("");
             setError("");
 
-            // if (notFound) {
-            //   // return <p>NO data</p>;
-            //   setError("No data found");
             //   console.log("not found");
             // } else {
             //   setError("");
@@ -40,7 +37,7 @@ const CustomApiFetch = () => {
             // setError("");
           } else {
             setLoad(false);
-            setPost("");
+            // setPost("");
             setError("Please enter task");
           }
           // setLoad(false);
@@ -61,16 +58,19 @@ const CustomApiFetch = () => {
       <button
         onClick={() => {
           setLoad(false);
+          setError("");
         }}
       >
         clear
       </button>
-      {tasks.map((task, index) => {
-        return <p key={index}>{task.title}</p>;
-      })}
-      {notFound && <p>No Data Found</p>}
-      {error && <p>{error}</p>}
-    </div>
+      <div>
+        {tasks.map((task, index) => {
+          return <p key={index}>{task.title}</p>;
+        })}
+        {notFound && <p>No data Found</p>}
+        {error && <p>{error}</p>}
+      </div>
+    </>
   );
 };
 
