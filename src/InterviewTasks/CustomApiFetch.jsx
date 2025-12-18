@@ -6,11 +6,8 @@ const CustomApiFetch = () => {
   const [input, setInput] = useState("");
   const [load, setLoad] = useState(false);
   const [error, setError] = useState("");
-  const [tasks, notFound] = useFetch(
-    `https://dummyjson.com/posts/search?q=${post}`,
-    post,
-    load
-  );
+  const [api, setApi] = useState("");
+  const [tasks, notFound] = useFetch(api, load);
 
   return (
     <div>
@@ -27,7 +24,8 @@ const CustomApiFetch = () => {
       <button
         onClick={() => {
           if (input.length > 0) {
-            setPost(input);
+            // setPost(input);
+            setApi(`https://dummyjson.com/posts/search?q=${input}`);
             setLoad(true);
             setInput("");
             setError("");
@@ -51,7 +49,22 @@ const CustomApiFetch = () => {
       >
         search
       </button>
-
+      <button
+        onClick={() => {
+          setError("");
+          setApi("https://dummyjson.com/posts");
+          setLoad(true);
+        }}
+      >
+        ListAll
+      </button>
+      <button
+        onClick={() => {
+          setLoad(false);
+        }}
+      >
+        clear
+      </button>
       {tasks.map((task, index) => {
         return <p key={index}>{task.title}</p>;
       })}

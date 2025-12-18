@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const useFetch = (url, post, load) => {
+const useFetch = (url, load) => {
   const [data, setData] = useState([]);
   const [notFound, setNotFound] = useState(false);
   useEffect(() => {
