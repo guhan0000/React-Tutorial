@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-const ApiFetch2 = () => {
-  const [task, setTask] = useState([]);
-  const [loading, setLoading] = useState(false);
+import React from "react";
+import { useState, useEffect } from "react";
 
+const ApiFetch = () => {
+  const [search, setSearch] = useState("");
+  const [input, setInput] = useState("");
+  const [task, setTask] = useState([]);
   useEffect(() => {
     async function getTodo() {
-      if (!loading) {
-        console.log("no tasks");
-        return;
-      } else {
-      }
       let response = await fetch(`https://dummyjson.com/todos/`);
       if (response.ok) {
         let data = await response.json();
@@ -20,30 +16,40 @@ const ApiFetch2 = () => {
       }
     }
     getTodo();
-  }, [loading]);
+  }, []);
 
   return (
     <div>
       <h3>Iopex Task</h3>
-
-      <input type="text" placeholder="enter task" />
-      <button>search</button>
+      <input
+        type="text"
+        placeholder="enter task"
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
+      />
       <button
         onClick={() => {
-          setTask([]);
-          setLoading(false);
+          setSearch(input);
+        }}
+      >
+        search
+      </button>
+      <button
+        onClick={() => {
+          setInput("");
+          setSearch("");
         }}
       >
         clear
       </button>
       <button
         onClick={() => {
-          setLoading(true);
+          getTodo;
         }}
       >
         ListAll
       </button>
-      {!loading && <p>No tasks</p>}
       {task.map((title, index) => {
         return <h5 key={index}>{title.todo}</h5>;
       })}
@@ -51,4 +57,4 @@ const ApiFetch2 = () => {
   );
 };
 
-export default ApiFetch2;
+export default ApiFetch;
