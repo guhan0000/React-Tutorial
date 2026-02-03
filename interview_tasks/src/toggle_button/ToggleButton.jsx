@@ -57,6 +57,7 @@ const ToggleButton = () => {
           onClick={() => {
             setLike(!like);
           }}
+          style={{ cursor: "pointer" }}
         ></i>
       </div>
     </div>
