@@ -5,6 +5,7 @@ const ToggleButton = () => {
   const [text, setText] = useState("");
   const [show, setShow] = useState(false);
   const [color, setColor] = useState("yellow");
+  const [like, setLike] = useState(false);
 
   return (
     <div style={{ backgroundColor: color }}>
@@ -50,7 +51,14 @@ const ToggleButton = () => {
       >
         {color}
       </button>
-      <i className="fa-light fa-thumbs-up"></i>
+      <div className="container">
+        <i
+          className={`fa-solid fa-thumbs-up fa-2x ${like ? "text-success" : "text-light"}`}
+          onClick={() => {
+            setLike(!like);
+          }}
+        ></i>
+      </div>
     </div>
   );
 };
