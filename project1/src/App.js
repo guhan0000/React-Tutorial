@@ -2,12 +2,15 @@
 // import SearchData from "./api_fetch/SearchData";
 
 import "./App.css";
-import Filter from "./Components/Filter";
+// import Parent from "./useCallBackHook/Parent";
+import UseMemo1 from "./useMemo/UseMemo1";
+// import UseCallBack2 from "./useCallBackHook/UseCallBack2";
+// import Home from "./useContext/Home";
 
 function App() {
   return (
     <>
-      <Filter />
+      <UseMemo1 />
     </>
   );
 }
